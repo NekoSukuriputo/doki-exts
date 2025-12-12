@@ -51,7 +51,7 @@ internal class DoujinDesuParser(context: MangaLoaderContext) :
 	override suspend fun getListPage(page: Int, order: SortOrder, filter: MangaListFilter): List<Manga> {
 		val url = urlBuilder().apply {
             when {
-                page > 1 -> addPathSegments("manga/page/$page/")
+                page > 1 -> addPathSegments("manga?page=$page")
                 else -> addPathSegment("manga/")
             }
 
